@@ -105,6 +105,7 @@
 gris_oscuro = #333333
 gris_claro = #818181
 rojo = #bd255b
+gris_mas_claro = #f0f0f0
 img
 	vertical-align top 
 a
@@ -117,6 +118,11 @@ a
 	position absolute
 	top 50%
 //ocss clases
+.wrap
+	width 1000px
+.round 
+	border-radius 50%
+	overflow hidden
 .relative
 	position relative
 .center-block
@@ -133,6 +139,11 @@ a
 	border-bottom 1px solid gris_claro
 .padding-tb
 	padding 1em 0
+	
+.left
+	float left
+.right
+	float right
 	
 body
 	font-family 'Varela Round'
@@ -226,6 +237,93 @@ header
 		margin-right 1em
 		&:last-child
 			margin-right 0	
+.input
+	height 2.5em
+	border 1px solid gris_claro
+	padding 0 1em 0 2em
+	border-radius 5px
+	margin-right .5em
+	color gris_oscuro			
+.search-icon
+	color gris_claro
+	left .5em
+	position absolute
+	top .7em
+	border-right 1px solid gris_claro
+	padding-right 0.2em
+	height 1.3em
+.icon-close
+	position absolute
+	top .4em
+	right .8em
+	color gris_claro
+	font-size 1.2em
+ul 
+	margin 0
+	padding 0
+
+
+@media screen and (min-width:480px)
+	.song
+		&:nth-child(even)
+			margin-right 1em
+	.image
+		img 
+			width 100%
+			height auto		
+	.playing
+		&.medium
+			width auto
+.logo
+	display none	
+@media screen and (min-width:1000px)
+	body
+		background gris_mas_claro
+	.btn_menu
+		display none
+	header
+		height auto 
+		.title
+			display none
+	.menu
+		display block 
+		overflow hidden
+		.item
+			float left 
+			list-style none
+			text-transform uppercase
+			a
+				padding 1em
+				display block 
+				color gris_oscuro
+				border-top 5px solid transparent
+				&:hover
+					border-top 5px solid gris_claro
+	.logo
+		padding 1em 0
+		overflow hidden	
+		background white
+		display block 	
+	.isotipo
+		width 122px
+	.avatar
+		width 38px
+		height 38px
+	.username
+		color gris_claro
+		top 9px
+		margin-left .5em
+		&:after
+			border-left 7px solid transparent
+			border-right 7px solid transparent
+			border-top 9px solid gris_claro
+			content ""
+			display inline-block 
+			margin-left .4em
+			
+
+
+
 
 
 
