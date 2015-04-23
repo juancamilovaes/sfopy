@@ -1,3 +1,4 @@
+@import "nib"
 @import "normaliz.styl"
 @font-face {
 	font-family: 'icomoon';
@@ -133,7 +134,7 @@ a
 	padding 1em
 	
 .gray 
-	color gris_oscuro
+	color gris_claro
 	
 .border-bottom
 	border-bottom 1px solid gris_claro
@@ -184,6 +185,7 @@ header
 .playing
 	&.small
 		width 20em
+		margin 0 auto
 .actions
 	background rgba(black, .3)
 	bottom 0
@@ -223,6 +225,7 @@ header
 			height 5px
 			position relative
 			width 33%
+			animation 20s state infinite linear
 			.circle
 				background gris_oscuro
 				border-radius 50%
@@ -231,7 +234,19 @@ header
 				right 0
 				top -3px
 				width 12px
-				
+				animation 1.5s circle infinite
+@keyframes circle
+	0%
+		transform scale(1)
+	50%
+		transform scale(1.5)
+	100%
+		transform scale(1)
+@keyframes state
+	from 
+		width 0%
+	to 
+		width 100%				
 .play
 	.action
 		margin-right 1em
@@ -261,49 +276,26 @@ header
 ul 
 	margin 0
 	padding 0
+.playlist
+	display none
 
 
-@media screen and (min-width:480px)
-	.song
-		&:nth-child(even)
-			margin-right 1em
-	.image
-		img 
-			width 100%
-			height auto		
-	.playing
-		&.medium
-			width auto
-.logo
-	display none	
-@media screen and (min-width:1000px)
-	body
-		background gris_mas_claro
-	.btn_menu
-		display none
-	header
-		height auto 
-		.title
-			display none
-	.menu
-		display block 
-		overflow hidden
+.playlist
+	display none
+	padding 0 2em
+	width 22em
+	border-left 1px solid gris_claro
+	.list
+		list-style none
 		.item
-			float left 
-			list-style none
-			text-transform uppercase
-			a
-				padding 1em
-				display block 
-				color gris_oscuro
-				border-top 5px solid transparent
-				&:hover
-					border-top 5px solid gris_claro
-	.logo
-		padding 1em 0
-		overflow hidden	
-		background white
-		display block 	
+			padding 1em 0
+			.action
+				font-size 0.9em
+.logo
+	background white
+	display none
+	overflow hidden	
+	padding 1em 0
 	.isotipo
 		width 122px
 	.avatar
@@ -320,6 +312,62 @@ ul
 			content ""
 			display inline-block 
 			margin-left .4em
+
+@media screen and (min-width:480px)
+	.song
+		&:nth-child(even)
+			margin-right 1em
+	.image
+		img 
+			width 100%
+			height auto		
+	.playing
+		&.medium
+			width auto
+	
+@media screen and (min-width:1000px)
+	body
+		background gris_mas_claro
+	.btn_menu
+		display none
+	.music
+		float left
+		width 32.5em
+		.description 
+			display none
+			
+	.playlist
+	.logo
+		display block
+	
+				
+	.playing
+		padding-top 1.3em
+		&.large
+			margin 0 auto
+			width 62.5em
+			overflow hidden
+	header
+		height auto 
+		border none
+		.title
+			display none
+	.menu
+		display block 
+		overflow hidden
+		border-top 1px solid gris_claro
+		.item
+			float left 
+			list-style none
+			text-transform uppercase
+			a
+				padding 1em
+				display block 
+				color gris_oscuro
+				border-top 5px solid transparent
+				&:hover
+					border-top 5px solid gris_claro
+	
 			
 
 
